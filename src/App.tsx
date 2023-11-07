@@ -34,6 +34,7 @@ function App() {
         ...doc.data(),
         id: doc.id,
       }));
+      markersData.sort((a, b) => a.timeStamp - b.timeStamp);
       if (markersData.length > 0) {
         const data = markersData.map((marker, index) => {
           const latlng = marker?.location?.split(",");
