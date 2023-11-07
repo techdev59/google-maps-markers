@@ -24,9 +24,6 @@ function App() {
   const markersRef: any = collection(db, "numberedQuestMarkers");
 
   const onLoad = useCallback(function callback(map: google.maps.Map) {
-    const center: google.maps.LatLngLiteral = mapCenter;
-    const bounds = new window.google.maps.LatLngBounds(center);
-
     setMap(map);
   }, []);
 
@@ -88,7 +85,7 @@ function App() {
     }
     onLoadMarker(newMarker);
   };
-  const onUnmount = useCallback(function callback(map: google.maps.Map) {
+  const onUnmount = useCallback(function callback() {
     setMap(null);
   }, []);
 
